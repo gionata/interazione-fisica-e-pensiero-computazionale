@@ -1,0 +1,22 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning,arrows}
+\tikzset{
+  ->,
+  node distance=4cm,
+  every state/.style={thick, fill=gray!10, minimum size=2.2cm},
+  initial text=All'avvio,
+}
+\begin{document}
+\begin{tikzpicture}[shorten >=1pt, node distance=4cm, on grid, auto]
+  \node[state, initial, label=below:Felice] (felice)
+    {\includegraphics[width=1.3cm]{assets/img/felice.png}};
+  \node[state, right=of felice, label=below:Annoiato] (annoiato)
+    {\includegraphics[width=1.3cm]{assets/img/annoiato.png}};
+
+  \path[->] (felice) edge[bend left, above] node {Timeout} (annoiato);
+  \path[->] (annoiato) edge[bend left, below] node {A} (felice);
+  \draw (felice) edge[loop above] node {A} (felice);
+\end{tikzpicture}
+\end{document}
