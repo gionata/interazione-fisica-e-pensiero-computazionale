@@ -189,15 +189,7 @@ layout: two-cols
 
 ::right::
 
-![Esempio MakeCode: comportamento guidato da eventi](./assets/img/microbit-recipe-1.png){width=100%}
-
-<v-click>
-
-### Macchina a stati
-
-![Diagramma di stato con le icone Micro:bit e le transizioni A e B](./assets/img/diagramma-stati-eventi.png){width=100%}
-
-</v-click>
+![Esempio MakeCode per reagire agli input](./assets/img/faccine.png){width=60%}
 
 <!--
 Il primo incontro ha una funzione motivazionale, ma non si limita a “provare il dispositivo”. Gli studenti si familiarizzano con la scheda e osservano come il display a LED possa mostrare un’icona. L’attenzione si sposta presto sui primi eventi da pulsante: un’azione nel mondo fisico attiva una parte specifica del programma e produce una risposta.
@@ -221,11 +213,19 @@ layout: two-cols
 
 **Attività:** Un primo tamagotchi
 
+[![Programma](./assets/img/recipe-1.gif){width=25%}](https://makecode.microbit.org/S13846-71170-84222-71645)
+
 ::right::
 
-![Diagramma degli stati osservabili e delle transizioni A e B](./assets/img/diagramma-stati-eventi.png){width=100%}
+![Esempio MakeCode: comportamento guidato da eventi](./assets/img/microbit-recipe-1.png){width=100%}
 
-![Esempio MakeCode per reagire agli input](./assets/img/faccine.png){width=60%}
+<v-click>
+
+### Macchina a stati
+
+![Diagramma di stato con le icone Micro:bit e le transizioni A e B](./assets/img/diagramma-stati-eventi.png){width=100%}
+
+</v-click>
 
 <!--
 Nel secondo incontro il comportamento viene descritto anche attraverso gli stati che il sistema può mostrare. Le faccine offrono un riferimento intuitivo: non sono la teoria degli automi, ma aiutano a dare un nome a configurazioni osservabili e a chiedersi quali eventi possano portare dall’una all’altra. Il diagramma affiancato ai blocchi esplicita il passaggio dagli stati visualizzati alle transizioni attivate dai pulsanti.
@@ -247,6 +247,8 @@ layout: two-cols
    - **Output:** valore mostrato
 
 **Attività:** Segnapunti che mostrano la differenza reti; segnapunti con regole +3, +1, 0...
+
+[![Programma](./assets/img/recipe-2.gif){width=25%}](https://makecode.microbit.org/S41178-88413-37695-37192)
 
 ::right::
 
@@ -280,6 +282,8 @@ layout: two-cols
 
 **Attività:** Sperimentare l'uso dell'operatore resto; altre sequenze cicliche
 
+[![Programma](./assets/img/recipe-3.gif){width=25%}](https://makecode.microbit.org/S30553-34993-49578-00989)
+
 ::right::
 
 ![Esempio MakeCode con stati codificati e condizioni](./assets/img/microbit-recipe-3.png){width=65%}
@@ -310,6 +314,9 @@ layout: two-cols
 - Blocco `forever`: controllo continuo della condizione
 
 ### Il tempo non “succede” nel programma: va rappresentato e controllato
+
+
+[![Programma](./assets/img/recipe-4.gif){width=25%}](https://makecode.microbit.org/S90051-13886-48915-94659)
 
 ::right::
 
@@ -353,13 +360,14 @@ Il questionario ha raccolto quindici risposte e restituisce un quadro misto. Chi
 layout: itadinfo
 ---
 
-## Una criticità: fare non significa ancora saper spiegare
+## Criticità
+### Fare non significa ancora saper spiegare
 
 - Alcuni studenti modificavano correttamente i programmi
-- Non sempre sapevano spiegare **quale dato fosse lo stato**
-- Nel Tamagotchi era difficile motivare il ruolo di `forever`
-- Il "ciclo di controllo" è richiede di interiorizzare
-  vari concetti e necessita di tempo per l'assimilazione 
+- Non sempre sapevano spiegare il comportamento del programma
+- Nel Tamagotchi temporizzato era difficile motivare il ruolo di `forever`
+- Il "ciclo di controllo" richiede
+  vari concetti non banali e necessita di tempo per l'assimilazione 
 
 ### Due piani da distinguere
 **Motivazionale:** il physical computing ha funzionato bene  
