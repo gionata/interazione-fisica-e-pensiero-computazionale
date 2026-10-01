@@ -9,12 +9,15 @@ import QR from './QR.vue';
 export interface FrontespizioProps {
   titolo?: string
   sottotitolo?: string
+  url: string
   autori?: AutoreItem[]
 }
 
 const props = withDefaults(defineProps<FrontespizioProps>(), {
-  titolo: 'Giochi di Numeri',
-  sottotitolo: "Dall'aritmetica al pensiero ricorsivo",
+  titolo: '',
+  sottotitolo: '',
+  url: '',
+  autori: () => [],
 });
 
 const showTitle = ref(true);
@@ -44,7 +47,7 @@ onMounted(() => {
     </div>
   </div>
   <div class="no-print">
-    <QR />
+    <QR :url="props.url" />
   </div>
   <div class="print-restore-margin">
     <Piede />

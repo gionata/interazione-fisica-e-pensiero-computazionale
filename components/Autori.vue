@@ -8,26 +8,7 @@ export interface AutoriProps {
 }
 
 const props = withDefaults(defineProps<AutoriProps>(), {
-  autori: () => [
-    {
-      nome: 'Gionata Massi',
-      affiliazione: 'IIS "Savoia Benincasa"',
-      citta: 'Ancona',
-      presentatore: true,
-    },
-    {
-      nome: 'Emanuele Lorenzoni',
-      affiliazione: '',
-      citta: '',
-      presentatore: false,
-    }/*,
-    {
-      nome: 'Pamela Sanchini',
-      affiliazione: 'Liceo Scientifico e Musicale "Einstein"',
-      citta: 'Rimini',
-      presentatore: false,
-    },*/
-  ],
+  autori: () => [],
 })
 </script>
 

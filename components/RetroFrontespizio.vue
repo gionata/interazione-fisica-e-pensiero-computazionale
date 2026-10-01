@@ -2,15 +2,17 @@
 import Autori, { type AutoreItem } from './Autori.vue';
 import Piede from './Piede.vue';
 import Titolo from './Titolo.vue';
+import QR from './QR.vue';
 
 export interface RetroFrontespizioProps {
   titolo?: string
+  url: string
   autori?: AutoreItem[]
 }
 
 const props = withDefaults(defineProps<RetroFrontespizioProps>(), {
-  titolo: 'Giochi di Numeri',
-})
+  titolo: ''
+});
 </script>
 
 <template>
@@ -26,6 +28,3 @@ const props = withDefaults(defineProps<RetroFrontespizioProps>(), {
   </div>
   <Piede />
 </template>
-
-<style lang="css" scoped></style>
-

@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { renderSVG } from 'uqr'
 
 export interface QRProps {
-  url?: string
+  url: string
   alt?: string
   ecc?: 'L' | 'M' | 'Q' | 'H'
   border?: number
@@ -12,7 +12,6 @@ export interface QRProps {
 }
 
 const props = withDefaults(defineProps<QRProps>(), {
-  url: 'https://gionata.github.io/interazione-fisica-e-pensiero-computazionale/',
   alt: 'QR Code',
   ecc: 'M',
   border: 1,
@@ -32,16 +31,46 @@ const svgContent = computed(() => {
 
 <template>
   <div class="text-center">
-    <div
-      class="qr"
-      :aria-label="props.alt"
-      role="img"
-      v-html="svgContent"
-    />
+    <a
+      class="qr-link"
+      :href="props.url"
+      :aria-label="`Apri il sito del progetto: ${props.url}`"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div
+        class="qr"
+        :aria-label="props.alt"
+        role="img"
+        v-html="svgContent"
+      />
+    </a>
   </div>
 </template>
 
 <style lang="css" scoped>
+.qr-link {
+  display: inline-block;
+  color: inherit;
+  cursor: default;
+  text-decoration: none;
+  outline: none;
+  border: 0;
+  box-shadow: none;
+}
+
+.qr-link:hover,
+.qr-link:visited,
+.qr-link:active,
+.qr-link:focus,
+.qr-link:focus-visible {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+  border: 0;
+  box-shadow: none;
+}
+
 .qr {
   display: inline-block;
   height: 7em;
