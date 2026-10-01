@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import Autori, { type AutoreItem } from './Autori.vue';
 import Piede from './Piede.vue';
 import Titolo from './Titolo.vue';
@@ -10,6 +10,9 @@ export interface FrontespizioProps {
   titolo?: string
   sottotitolo?: string
   url?: string
+  conferenza?: string
+  citta?: string
+  data?: string
   autori?: AutoreItem[]
 }
 
@@ -17,8 +20,15 @@ const props = withDefaults(defineProps<FrontespizioProps>(), {
   titolo: '',
   sottotitolo: '',
   url: '',
+  conferenza: '',
+  citta: '',
+  data: '',
   autori: () => [],
 });
+
+const informazioniConferenza = computed(() =>
+  [props.conferenza, props.citta, props.data].filter(Boolean).join(' · '),
+);
 
 const showTitle = ref(true);
 
@@ -46,8 +56,11 @@ onMounted(() => {
       <Autori :autori="props.autori" />
     </div>
   </div>
-  <div class="no-print">
+  <div class="no-print conference-info">
     <QR :url="props.url" />
+    <p v-if="informazioniConferenza" class="conference-details">
+      {{ informazioniConferenza }}
+    </p>
   </div>
   <div class="print-restore-margin">
     <Piede />
@@ -108,6 +121,23 @@ onMounted(() => {
     display: none;
   }
 }
+
+.conference-info {
+  text-align: center;
+}
+
+.conference-details {
+  margin: -12mm 0 0;
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+@media print {
+  .conference-details {
+    margin-top: -48mm;
+  }
+}
+
 .print-restore-margin {
   @media print {
     margin-top: 1.5cm;

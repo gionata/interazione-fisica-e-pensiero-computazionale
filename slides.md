@@ -43,6 +43,9 @@ const autori = [
   :sottotitolo="sottotitolo"
   :autori="autori"
   :url="url"
+  conferenza="ITADINFO 2026"
+  citta="Padova"
+  data="09/10/2026"
 />
 
 <!--
