@@ -195,7 +195,7 @@ Questa progressione è il filo che userò nei prossimi lucidi: in ogni fase camb
 -->
 
 ---
-layout: two-cols
+layout: itadinfo-two-cols
 ---
 
 ## Incontro 1 — Familiarizzare con Micro:bit
@@ -218,7 +218,7 @@ Il primo incontro ha una funzione motivazionale e di familiarizzazione con la sc
 -->
 
 ---
-layout: two-cols
+layout: itadinfo-two-cols-sx
 ---
 
 ## Incontro 2 — Descrivere stati osservabili
@@ -258,7 +258,7 @@ L’insegnante guida gli studenti a distinguere una lista di azioni da una descr
 -->
 
 ---
-layout: two-cols
+layout: itadinfo-two-cols-dx
 ---
 
 ## Incontro 3 — Conservare informazione
@@ -298,7 +298,7 @@ Il segnapunti introduce un passaggio concettuale decisivo. Se ogni pressione dev
 -->
 
 ---
-layout: two-cols
+layout: itadinfo-two-cols
 ---
 
 ## Incontro 4 — Codificare e far evolvere gli stati
@@ -336,7 +336,7 @@ Il modulo compare nel ragionamento come strumento per realizzare una progression
 -->
 
 ---
-layout: two-cols
+layout: itadinfo-two-cols-dx
 ---
 
 ## Incontro 5 — Mini-progetti e gestione del tempo
