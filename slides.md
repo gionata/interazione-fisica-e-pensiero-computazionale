@@ -18,6 +18,9 @@ location: Sala Elettra Grigia (piano terra), centro congressi Palazzo della Salu
 ---
 
 <script setup>
+const titolo="Interazione Fisica e Pensiero Computazionale";
+const sottotitolo="Fare, descrivere, modellizzare";
+const url="https://gionata.github.io/interazione-fisica-e-pensiero-computazionale/";
 const autori = [
   {
     nome: 'Gionata Massi',
@@ -35,10 +38,10 @@ const autori = [
 </script>
 
 <Frontespizio
-  titolo="Interazione Fisica e Pensiero Computazionale"
-  sottotitolo="Fare, descrivere, modellizzare"
+  :titolo="titolo"
+  :sottotitolo="sottotitolo"
   :autori="autori"
-  url="https://gionata.github.io/interazione-fisica-e-pensiero-computazionale/"
+  :url="url"
 />
 
 <!--
@@ -453,7 +456,19 @@ La condizione è esplicitare il contenuto disciplinare: non limitarsi a far funz
 
 <RetroFrontespizio
   titolo="Interazione Fisica e Pensiero Computazionale"
-  :autori="autori"
   sottotitolo="Fare, descrivere, modellizzare"
-  url="https://gionata.github.io/interazione-fisica-e-pensiero-computazionale/"
+  :autori="[
+    {
+      nome: 'Gionata Massi',
+      affiliazione: 'IIS &quot;Savoia Benincasa&quot;',
+      citta: 'Ancona',
+      presentatore: true,
+    },
+    {
+      nome: 'Emanuele Lorenzoni',
+      affiliazione: '',
+      citta: '',
+      presentatore: false,
+    },
+  ]"
 />

@@ -9,7 +9,7 @@ import QR from './QR.vue';
 export interface FrontespizioProps {
   titolo?: string
   sottotitolo?: string
-  url: string
+  url?: string
   autori?: AutoreItem[]
 }
 
