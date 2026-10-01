@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const baseUrl = import.meta.env.BASE_URL
+import logo from '../assets/itadinfo-notag.svg'
 </script>
 
 <template>
     <div absolute bottom-5 right-0 left-0 text-center class="footer-container">
         <div class="logo-itadinfo">
-          <img :src="`${baseUrl}assets/itadinfo-notag.svg`" alt="Logo ITADINFO" />
+          <img :src="logo" alt="Logo ITADINFO" />
         </div>
     </div>
 </template>

@@ -13,6 +13,7 @@ mcp: true
 hideInToc: true
 comark: true
 duration: 18min
+preloadImages: false
 date: 2026-10-09-T17:00
 location: Sala Elettra Grigia (piano terra), centro congressi Palazzo della Salute, Via San Francesco 90. Padova.
 ---
