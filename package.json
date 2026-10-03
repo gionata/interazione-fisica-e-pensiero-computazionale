@@ -6,6 +6,7 @@
     "build": "slidev build",
     "dev": "slidev --open --port 3030",
     "export": "slidev export",
+    "export:pdf": "bun run export --output \"public/pdf/MASSI-Interazione-fisica-e-pensiero-computazionale-20261009.pdf\"",
     "generate-qr": "bun scripts/generate-qr.ts"
   },
   "dependencies": {
@@ -17,5 +18,8 @@
   },
   "patchedDependencies": {
     "@shikijs/vitepress-twoslash@4.5.0": "patches/@shikijs%2Fvitepress-twoslash@4.5.0.patch"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.63.0"
   }
 }

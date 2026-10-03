@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<QRProps>(), {
   ecc: 'M',
   border: 1,
   whiteColor: 'transparent',
-  blackColor: '#000000',
+  blackColor: 'currentColor',
 })
 
 const svgContent = computed(() => {

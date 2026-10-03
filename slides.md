@@ -390,7 +390,7 @@ Lettura dei blocchi · input, output e stato · «all’avvio» e «per sempre»
 
 ## Esito del test
 - Prestazioni mediamente buone, in particolare su variabili, struttura dei programmi e diagrammi di stato
-- Restano difficoltà nel distinguere formalmente input e output delle periferiche Micro:bit
+- Il tempo non è sufficiente per apprendere a distinguere gli stati e a realizzare il *loop* «per sempre»
 
 <!--
 La valutazione conclusiva comprendeva un test a scelta multipla e un questionario di gradimento. Il test riguardava blocchi di codice, input e output, automi a stati finiti e logica di programmazione. Le prestazioni sono state mediamente buone, soprattutto nell’uso delle variabili di stato, nella struttura dei programmi e nella lettura dei diagrammi. Sono emerse però difficoltà nel classificare formalmente le periferiche della Micro:bit come dispositivi di input o output. Non sono disponibili percentuali o distribuzioni dei punteggi.
