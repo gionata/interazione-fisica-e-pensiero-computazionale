@@ -362,7 +362,8 @@ layout: itadinfo-two-cols
 
 </v-click>
 
-<!--
+
++<!--
 Nel quarto incontro codifichiamo gli stati con numeri e usiamo condizioni per selezionare la transizione successiva. A ogni pressione di B, la sequenza passa da “Pronti” a “Partenza”, poi a “Via!” e ricomincia. Il diagramma sulla slide rende visibile il ciclo.
 
 La domanda di previsione chiede di determinare l’esito prima di eseguire il programma: bisogna combinare il valore corrente dello stato, l’input e la condizione. Il debugger permette poi di confrontare la previsione con l’esecuzione. Per estendere la sequenza a più stati introduciamo l’operatore resto, collegando una tecnica di programmazione a una progressione ciclica.
@@ -375,12 +376,9 @@ layout: itadinfo-two-cols-dx
 
 ## Incontro 5 — Gestione del tempo e progetti di gruppo
 
-<!-- L'elenco principale mostra le 4 frasi nei primi 4 click -->
 <ul class="pl-6 flex flex-col gap-1">
-  <!-- Sostituito flex con grid grid-cols-[6fr_4fr] per bloccare le proporzioni delle colonne -->
   <li v-click class="list-item list-disc grid grid-cols-[6fr_4fr] items-center w-full">
     <span>L'animale si sveglia felice ma, dopo un certo tempo senza stimoli...</span> 
-    <!-- Click 5: Compaiono tutte le parti in grassetto -->
     <b v-click="5" class="text-primary pl-4">«all'avvio», stato iniziale, timer attivo, istante</b>
   </li>
   
@@ -400,7 +398,6 @@ layout: itadinfo-two-cols-dx
   </li>
 </ul>
 
-<!-- Click 6: Compare la GIF della simulazione -->
 <div class="flex justify-end my-2" v-click="6">
   <a href="https://makecode.microbit.org/S90051-13886-48915-94659" target="_blank" alt="Simulazione Micro:bit su MakeCode - Ricetta 4">
     <img src="./assets/img/recipe-4.gif" class="w-24" />
@@ -409,12 +406,10 @@ layout: itadinfo-two-cols-dx
 
 ::right::
 
-<!-- Click 6: Compare l'immagine del codice a destra insieme alla GIF -->
 <div class="flex justify-end w-full" v-click="6">
   <img src="./assets/img/microbit-recipe-4.png" class="w-[75%]" alt="Esempio MakeCode con controllo temporizzato" />
 </div>
 
-<!-- Usiamo un div standard con v-click="4" per far apparire l'intera sezione al quarto click -->
 <div v-click="4" class="mt-4">
   <h2>Macchina a stati</h2>
 
@@ -467,12 +462,9 @@ layout: itadinfo
 ### Fare non significa ancora saper spiegare
 
 - La competenza pratica non sempre si accompagna a una spiegazione formale
-- La gestione del tempo richiede variabili e controllo continuo, da consolidare
-
-### Due piani da distinguere
-
-**Gradimento:** il corso è stato apprezzato, ma non pienamente aderente alle esigenze percepite  
-**Orientamento:** non si è ottenuto l’aumento atteso delle iscrizioni al SIA
+- Codificare una macchina a stati temporizzata non è banale!
+- Variabili di stato, *scan loop*,  strutture di controllo annidate 
+- **Gradimento  != Orientamento**
 
 <!--
 La criticità didattica è la distanza possibile tra riuscire a costruire un comportamento e saperne spiegare il modello. I risultati sul test sono incoraggianti, ma la classificazione di input e output e il coordinamento di stato, tempo e ciclo richiedono altro lavoro.
@@ -483,14 +475,13 @@ Gradimento, apprendimento concettuale e orientamento sono quindi dimensioni coll
 
 -->
 
-
 ---
 layout: itadinfo
 ---
 
-## Conclusioni — Fare, descrivere, modellizzare
+## Conclusioni
 
-- La Micro:bit rende osservabile il legame tra programma e sistema fisico
+- La Micro:bit rende osservabile il legame tra programma e mondo fisico
 - Eventi, variabili e transizioni rendono descrivibile il comportamento
 - Il valore formativo emerge quando il ragionamento è esplicitato
 - Non solo far funzionare un programma: descriverlo, prevederlo e discuterlo
@@ -498,13 +489,14 @@ layout: itadinfo
 ## Sviluppi per una nuova edizione
 
 - Più tempo per consolidare concetti e lessico
+- Una ricetta di macchina a stati senza temporizzazione
 - Verbalizzare input, stato, output e transizioni durante le attività
-- Chiedere di **prevedere prima di eseguire**
 - Esercitare il passaggio diagramma → programma
-
 
 <!--
 Il messaggio conclusivo è che il physical computing può essere un contesto per insegnare concetti informatici, non soltanto un’occasione per costruire oggetti interattivi. La Micro:bit rende osservabile il legame tra programma e sistema fisico; gli eventi, le variabili e le transizioni offrono un lessico per descrivere quel legame.
+
+La macchina a stati temporizzata va introdotta passando per un modello che senza temporizzazione che però richieda di esplicitare transizioni con le stesse etichette/input.
 
 Perché il laboratorio abbia valore formativo, però, il ragionamento va reso esplicito. Non basta verificare che il programma funzioni: chiediamo agli studenti di descrivere il comportamento, individuare lo stato, prevedere la transizione e confrontare la previsione con l’esecuzione. È questa la progressione del titolo: fare, descrivere, modellizzare.
 
