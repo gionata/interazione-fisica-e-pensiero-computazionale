@@ -49,11 +49,9 @@ const autori = [
 />
 
 <!--
-Buon pomeriggio, sono Gionata Massi e presenterò un percorso di dieci ore realizzato, insieme al collega Emanuele Lorenzoni, all’Istituto Savoia Benincasa di Ancona. La proposta usa il physical computing, approcciato con una scheda Micro:bit, non come semplice occasione per “fare qualcosa con la tecnologia”, ma come un metodo concreto per scoprire e discutere alcune idee fondamentali dell’informatica.
+Buon pomeriggio. Presento un percorso di dieci ore progettato e realizzato con il collega Emanuele Lorenzoni all’Istituto Savoia Benincasa di Ancona. Abbiamo usato la Micro:bit non soltanto per costruire oggetti interattivi, ma come contesto concreto per affrontare concetti fondamentali dell’informatica.
 
-Il titolo sintetizza il movimento didattico: partire dall’interazione fisica, descrivere con precisione che cosa deve fare il dispositivo, scriver il programma, e arrivare a modellizzare comportamenti comuni come fossero tipi di automi.
-
-Il sottotitolo richiama perciò tre passaggi, non tre attività scorrelate: fare, descrivere, modellizzare.
+Il titolo riassume la progressione proposta: si parte dall’interazione fisica, si descrive il comportamento atteso e si arriva a modellizzarlo. Il punto, quindi, non è solo far funzionare un programma: è rendere esplicito il modello che ci permette di capirlo e discuterlo.
 
 -->
 
@@ -67,7 +65,7 @@ hideInToc: true
 <Toc maxDepth="2" minDepth="1" text-sm/>
 
 <!--
-In questa presentazione illustrerò il contesto e dagli obiettivi disciplinari, perché aiutano a capire perché è stata scelta proprio la Micro:bit, e indicherò la grande idea dell'informatica attorno alla quale abbiamo progettato il percorso. Poi ricostruirò i cinque incontri seguendo la progressione dei concetti: dagli eventi e dagli output, alle variabili di stato, fino alle transizioni temporizzate. Chiuderò con una valutazione sul percorso e sul come migliorare una futura edizione. L’attenzione sarà soprattutto su ciò che gli studenti erano chiamati a capire, non soltanto sui programmi che hanno realizzato.
+Presenterò il contesto e gli obiettivi disciplinari, poi il modello a stati che dà unità al percorso. Seguirò la progressione dei cinque incontri: dagli eventi e dalle uscite, alla variabile di stato, fino al controllo del tempo. Chiuderò con i risultati, le criticità e alcune indicazioni per una nuova edizione. L’attenzione sarà su ciò che gli studenti erano chiamati a comprendere, non soltanto sui programmi realizzati.
 
 -->
 
@@ -78,7 +76,7 @@ layout: itadinfo
 # Introduzione
 ## Contesto e destinatari
 
-- Progetto fondi DM 65/2023 (STEM)
+- Progetto finanziato con fondi del DM 65/2023 (STEM)
 - IIS “Savoia Benincasa”, Ancona
 - Classe seconda **ITE AFM**
 - 10 ore: cinque incontri da due ore
@@ -91,9 +89,9 @@ layout: itadinfo
 - Usare i numeri naturali per contare e misurare intervalli di tempo
 
 <!--
-L’esperienza si colloca nell’ambito del Decreto Ministeriale n. 65 del 2023 per il potenziamento delle competenze STEM. Il gruppo scelto era una classe seconda dell’indirizzo Amministrazione, Finanza e Marketing dell’Istituto Tecnico Economico. Il percorso si sarebbe dovuto svolgere in dieci ore organizzate in cinque incontri di due ore ciascuno.
+Il percorso rientra nelle attività di potenziamento STEM finanziate dal DM 65/2023. Si è svolto con una classe seconda dell’indirizzo Amministrazione, Finanza e Marketing dell’Istituto Tecnico Economico: dieci ore, suddivise in cinque incontri.
 
-Non era richiesta alcuna esperienza di programmazione e i prerequisiti sono molto accessibili per una classe seconda: leggere una consegna operativa, riconoscere una relazione di causa ed effetto e usare i numeri naturali per contare o misurare intervalli. Questo rendeva possibile concentrarsi sulla costruzione di idee informatiche, ache con una platea di studenti che non nutrisse forti interessi verso l'informatica. 
+Non era richiesta esperienza di programmazione. I prerequisiti erano leggere consegne operative, riconoscere relazioni di causa ed effetto e usare i numeri naturali per contare e misurare intervalli. Questo ci ha permesso di concentrare il lavoro sulle idee informatiche, senza dare per scontato un interesse o una preparazione specifici. Le attività sono state fatte svolgere in gruppi di 4 studenti, ognuni gruppo con un PC e una scheda Micro:bit. 
 
 -->
 
@@ -121,47 +119,58 @@ layout: itadinfo
 </div>
 
 <!--
-Gli obiettivi, che ex-post abbiamo rimappato con sulla Proposta di Indicazioni del CINI, sono quelli che possiamo leggere nella diapositiva. Realizzazione e validazione di programmi che modellano sistemi o processi (T-S-6); come il programma rappresenta i dati del problema, i risultati e gli stati intermedi (T-S-10).
+Abbiamo riletto a posteriori il percorso alla luce della Proposta di Indicazioni del CINI. I traguardi selezionati riguardano la realizzazione di programmi che modellano sistemi o processi e la rappresentazione dei dati, dei risultati e degli stati intermedi.
 
-Le attività su pulsanti, sensori e reazioni del dispositivo hanno permesso di lavorare su O-S-P-1, riconoscendo il contributo delle varie parti del programma.
-Vari esempi con variabili hanno reso esplicita la rappresentazione dei dati e degli stadi intermedi.
-Il ciclo «per sempre» e le transizioni temporizzate dell'ultimo incontro hanno coinvolto O-S-P-4;
-l’uso della Micro:bit con sensori, pulsanti e display ha permesso di lavorare su O-S-N-1.
+Le attività hanno permesso di riconoscere il contributo delle diverse parti di un programma, di usare variabili per rappresentare informazioni persistenti e di lavorare con condizioni e cicli. Pulsanti, sensori e display hanno dato concretezza al rapporto tra input e output.
 
-O-S-P-2 è stato affrontato in modo limitato, chiedendo di leggere blocchi già scritti e prevederne l’effetto osservabile.
-Il confronto fra blocchi MakeCode, stati numerici e diagrammi informali ha toccato O-S-D-1 solo in forma introduttiva.
+La previsione dell’esecuzione è stata affrontata soprattutto leggendo blocchi già scritti. Il confronto tra blocchi, valori di stato e diagrammi ha introdotto il tema delle rappresentazioni alternative, senza svilupparlo in modo sistematico. È importante esplicitare questi limiti: i riferimenti indicano una lettura del percorso, non la pretesa di aver raggiunto ogni obiettivo con la stessa profondità.
 
 -->
 
 ---
 layout: itadinfo
+transition: fade-in
 ---
 
 ## Metodo e strumenti
-
-### Una progressione di scoperta guidata
-**Fare** → **descrivere** → **modellizzare**
+### Strumenti
 
 - [Micro:bit](https://microbit.org/): pulsanti e sensori come ingressi; display LED come uscita
-- [MakeCode](https://makecode.microbit.org/): linguaggio a blocchi, simulatore e caricamento sul dispositivo
-- Dal comportamento osservato al programma, e dal programma al modello
+- [MakeCode](https://makecode.microbit.org/): linguaggio a blocchi, simulatore, debugger e caricamento sul dispositivo
 
 ### Cornice pedagogica
 
-- Scoperta guidata attraverso progetti pratici
-- Esempi iniziali da esplorare e generalizzare
-- Apprendimento induttivo ed esperenziale
+<ul>
+  <li>Ciclo di apprendimento esperienziale di Kolb
+    <ul class="pl-6 list-none flex flex-col gap-1">
+      <li v-click class="list-item list-disc flex justify-between items-center w-full">
+        <span>Esperienza concreta</span>
+        <b v-click="2" class="text-primary">FARE →</b>
+      </li>
+      <li v-click class="list-item list-disc flex justify-between items-center w-full">
+        <span>Osservazione riflessiva</span>
+        <b v-click="3" class="text-primary">DESCRIVERE →</b>
+      </li>
+      <li v-click class="list-item list-disc flex justify-between items-center w-full">
+        <span>Concettualizzazione astratta</span>
+        <b v-click="4" class="text-primary">MODELLIZZARE →</b>
+      </li>
+      <li v-click class="list-item list-disc flex justify-between items-center w-full">
+        <span>Sperimentazione attiva</span>
+        <b v-click="5" class="text-primary">MODELLIZZARE → DESCRIVERE → FARE</b>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 <!--
-La metodologia è una scoperta guidata organizzata per “ricette di progettazione”: si propone un comportamento, lo si osserva, si modifica il programma e si discute perché la modifica produce un certo effetto.
+La cornice pedagogica richiama il ciclo di apprendimento esperienziale di Kolb. Nel nostro percorso, **FARE** significa interagire con la Micro:bit e osservare il comportamento prodotto. **DESCRIVERE** significa rendere esplicito il comportamento atteso e tradurlo in un programma, componendo i blocchi di MakeCode: il codice diventa una descrizione eseguibile, da provare sulla scheda o nel simulatore.
 
-La Micro:bit rende visibili le relazioni tra il programma e il mondo fisico: i pulsanti e i sensori forniscono ingressi, il display a LED produce uscite, mentre le variabili permettono di rappresentare informazioni che il sistema conserva. Dispone di tanti sensori integrat e varie uscite tra cui una matrice di 5 x 5 LED e uno speaker.
+**MODELLIZZARE** significa ricondurre il comportamento del programma a uno degli schemi di macchina a stati esplorati nelle ricette. In alcuni schemi, l’uscita permette di riconoscere lo stato e un input determina la risposta; in altri, una variabile conserva lo stato corrente e viene aggiornata dagli eventi. Nel Tamagotchi temporizzato, una condizione sul tempo trascorso può attivare una transizione. Riconoscere lo schema aiuta a capire da che cosa dipende il passaggio e a prevedere che cosa accadrà.
 
-MakeCode è stato scelto perché presenta un linguaggio a blocchi leggibile, dispone di un simulatore con debugger e permette di trasferire rapidamente il programma sul dispositivo usando solo un browser.
+La sperimentazione attiva riavvia il ciclo: si parte dal modello per modificare o progettare un programma, si descrive l’effetto atteso e lo si verifica con una nuova esecuzione. Le fasi non costituiscono una sequenza rigida, ma si richiamano e possono ripetersi durante l’attività.
 
-Il feedback è quindi immediato e concreto.
-
-La macchina a stati non è stata presentata come teoria formale completa, ma come modello informale sufficiente per progettare e discutere i comportamenti.
+La Micro:bit rende osservabile il rapporto tra programma e sistema fisico: pulsanti e sensori forniscono ingressi, il display a LED e lo speaker producono uscite, mentre le variabili rappresentano informazioni conservate. MakeCode, con i blocchi leggibili, il simulatore e il debugger, consente di comporre rapidamente il programma e confrontare il modello con il comportamento osservato.
 
 -->
 
@@ -169,25 +178,24 @@ La macchina a stati non è stata presentata come teoria formale completa, ma com
 layout: itadinfo
 ---
 
-## La grande idea: la macchina a stati
+## La grande idea
+### Un comportamento si può descrivere: la macchina a stati
 
-### Un comportamento si può descrivere
-
-- **Eventi (ingressi):** pulsanti, sensori...
+- **Eventi (ingressi + tempo):** pulsanti, sensori, scadenze temporali
 - **Transizioni:** eventi e condizioni determinano il passaggio da uno stato all’altro
 - **Uscite osservabili:** azioni come mostrare o riprodurre
 - **Stati:** configurazioni del sistema, rappresentate nel programma anche tramite variabili
 
-**Modello informale**: abbastanza rigoroso da discutere il programma, senza introdurre tutta la teoria degli automi
+**Modello informale**: abbastanza rigoroso da discutere il programma ma senza introdurre la teoria degli automi
 
 <div class="text-xs mt-2">
 Esempi MakeCode: <a href="https://gionata.github.io/interazione-fisica-e-pensiero-computazionale/microbit/microbit-recipe-1.hex">eventi</a> · <a href="https://gionata.github.io/interazione-fisica-e-pensiero-computazionale/microbit/microbit-recipe-2.hex">stato</a> · <a href="https://gionata.github.io/interazione-fisica-e-pensiero-computazionale/microbit/microbit-recipe-3.hex">ciclo</a> · <a href="https://gionata.github.io/interazione-fisica-e-pensiero-computazionale/microbit/microbit-recipe-4.hex">timer</a>
 </div>
 
 <!--
-Prima di raccontare gli incontri, introduco il modello che useremo come filo conduttore per leggerli. Un sistema ha stati, riceve eventi di input, effettua transizioni e produce uscite osservabili. Nel percorso gli eventi comprendono pulsanti e sensori; lo stato interno è rappresentato da variabili; il controllo si realizza con gestori di eventi, condizioni e, nei comportamenti temporizzati, con il ciclo «per sempre».
+Questo è il modello che useremo per leggere gli esempi. Un sistema si trova in una certa configurazione, riceve input dai pulsanti e dai sensori oppure rileva il trascorrere di un intervallo, può cambiare stato e produce uscite osservabili. Le variabili rappresentano parte dello stato interno; gestori di eventi, condizioni e cicli controllano l’evoluzione. In questo senso, il tempo non è un ingresso esterno come la pressione di un pulsante: è una condizione temporale che può attivare una transizione.
 
-Non si tratta di presentare una teoria completa degli automi a stati finiti: il diagramma informale serve come strumento di progettazione e discussione, per chiarire il comportamento atteso e confrontarlo con i blocchi MakeCode. Nei prossimi esempi vedremo come questo modello si arricchisce progressivamente: prima l’evento e la risposta, poi la memoria dello stato, infine il controllo del tempo.
+Non introduciamo una teoria completa degli automi a stati finiti. Il diagramma è uno strumento per progettare e discutere il comportamento atteso e confrontarlo con i blocchi MakeCode. Vedremo il modello arricchirsi per gradi: prima la risposta a un evento, poi la memoria dello stato, infine il controllo del tempo.
 
 -->
 
@@ -200,18 +208,16 @@ layout: itadinfo
 | Incontro | Attività |
 |---|---|
 | 1 | Familiarizzazione con Micro:bit e tutorial introduttivi |
-| 2 | Animale virtuale e transizioni guidate dagli input |
-| 3 | Variabile di stato |
+| 2 | Transizioni guidate dagli input |
+| 3 | Variabili di stato |
 | 4 | Sequenze cicliche, codifica degli stati e selezione |
-| 5 | Transizioni temporizzate, Mini-progetti |
+| 5 | Transizioni temporizzate e mini-progetti |
 | - | Test e questionario |
 
-### Dall’evento allo stato, dallo stato al tempo
-
 <!--
-La scansione in cinque incontri accompagna un cambiamento nel modo di pensare il programma. Il primo incontro è motivazionale e introduce la scheda attraverso tutorial; nel secondo si affronta l’animale virtuale e il legame tra input e transizioni. Nel terzo, con il segnapunti, diventa centrale l’idea che il programma conservi un valore interno. Il quarto introduce sequenze cicliche e codifiche numeriche; negli incontri successivi i mini-progetti applicano questi schemi e affrontano anche le transizioni temporizzate. La verifica e il questionario concludono il percorso.
+La scansione dei cinque incontri segue una progressione concettuale. Si parte dalla familiarizzazione con la scheda; poi si descrivono stati riconoscibili, si introduce una variabile per conservare un valore e si codificano sequenze cicliche. Nell’ultimo incontro entra in gioco il tempo, rappresentato e controllato dal programma. Test e questionario completano il percorso.
 
-Questa progressione è il filo che userò nei prossimi lucidi: in ogni fase cambia la domanda. Prima “che cosa accade quando premo?”, poi “in quale stato si trova il sistema?”, infine “che cosa deve controllare il programma perché il passaggio avvenga dopo un intervallo?”.
+La domanda cambia insieme alle attività: che cosa accade quando arriva un input? Quale informazione deve ricordare il programma? Che cosa deve controllare perché una transizione avvenga dopo un intervallo? Nei prossimi esempi seguirò questa progressione.
 
 -->
 
@@ -223,12 +229,12 @@ layout: itadinfo-two-cols
 
 - Conoscere il display LED e i pulsanti
 - Esplorare i tutorial *Flashing Heart*, *Name Tag* e *Smiley Buttons*
-- Osservare output visivi e testuali e primi input da pulsante
+- Osservare output visivi e testuali; sperimentare gli input dei pulsanti
 - Confrontare simulatore e dispositivo
 
 **Domanda guida:** come cambia l’effetto osservabile quando modifico il programma?
 
-**Attività:** personalizzare un tutorial a partire dal comportamento osservato
+**Sperimentazione attiva:** personalizzare un tutorial a partire dal comportamento osservato
 
 ::right::
 
@@ -236,7 +242,9 @@ layout: itadinfo-two-cols
 ![Esempio visivo di icone visualizzate sulla Micro:bit](./assets/img/faccine.png){width=60%}
 
 <!--
-Il primo incontro ha una funzione motivazionale e di familiarizzazione con la scheda. Gli studenti esplorano tutorial introduttivi come *Flashing Heart*, *Name Tag* e *Smiley Buttons*: osservano output visivi e testuali e sperimentano i primi input da pulsante. Il simulatore e la scheda rendono immediatamente osservabili gli effetti delle modifiche al programma.
+Il primo incontro serve a prendere confidenza con la scheda e con l’ambiente di lavoro. Con tutorial come *Flashing Heart*, *Name Tag* e *Smiley Buttons*, gli studenti osservano messaggi e icone e provano i pulsanti come ingressi. Non chiediamo ancora di formalizzare il comportamento: il primo obiettivo è collegare una modifica del programma a un effetto osservabile.
+
+Il confronto tra simulatore e dispositivo aiuta a discutere che cosa resta uguale e che cosa cambia passando dall’esecuzione simulata a quella fisica. Questa esperienza fornisce il lessico concreto di input e output che useremo negli incontri successivi.
 
 -->
 
@@ -254,7 +262,7 @@ layout: itadinfo-two-cols-sx
 
 **Domanda guida:** lo stato cambia anche senza un nuovo input?
 
-**Attività:** Un primo tamagotchi
+**Sperimentazione attiva:** un primo Tamagotchi
 
 <div class="flex justify-end my-2">
   <a href="https://makecode.microbit.org/S13846-71170-84222-71645" target="_blank" alt="Simulazione Micro:bit su MakeCode - Ricetta 1">
@@ -275,11 +283,11 @@ layout: itadinfo-two-cols-sx
 </v-click>
 
 <!--
-Nel secondo incontro si introduce informalmente il concetto di automa e il diagramma di stato. L’animale virtuale cambia comportamento in risposta ai pulsanti: il diagramma mostra che le transizioni dipendono dagli input, non dallo stato precedente. Non viene proposta una trattazione formale completa; il modello aiuta a descrivere e progettare sistemi reattivi.
+Nel secondo incontro il Tamagotchi permette di passare dalla risposta visibile a una prima descrizione per stati. Gli studenti associano a ciascuna configurazione un comportamento e un’icona, poi osservano come i pulsanti attivino le transizioni mostrate nel diagramma.
 
-L’insegnante guida gli studenti a distinguere una lista di azioni da una descrizione del comportamento: si parte da una situazione iniziale, si verifica quale input arriva e si osserva la nuova situazione. La rappresentazione è ancora informale, ma prepara il terreno ai diagrammi di stato e rende più facile discutere il programma prima di entrare nel dettaglio dei blocchi.
+Qui lo stato non cambia da solo: nel modello proposto, il passaggio avviene in risposta a un input. La domanda guida prepara quindi il confronto con l’ultimo incontro, in cui introdurremo una transizione legata al tempo. Il diagramma non è una notazione formale completa; serve a rendere esplicita l’idea prima di leggere o modificare i blocchi.
 
-Agli studenti viene chiesto di collaborare, in gruppi da 4, per creare programmi che, ad input definiti e letti da sensori diversi, producano uno stesso output, sia esso visivo e/o sonoro.
+In gruppo, gli studenti progettano anche comportamenti in cui input diversi, compresi quelli rilevati dai sensori, producono uscite visive o sonore.
 
 -->
 
@@ -290,13 +298,10 @@ layout: itadinfo-two-cols-dx
 ## Incontro 3 — Conservare informazione
 
 - Il programma deve ricordare un valore tra un evento e il successivo
-- La **variabile** rappresenta lo stato dell’elaborazione
-- Distinguere
-   - **Input:** pulsante
-   - **Stato:** punteggio 
-   - **Output:** valore mostrato
+- La **variabile** conserva una parte dello stato del sistema
+- **Input:** pulsante · **Stato:** punteggio · **Output:** valore mostrato
 
-**Attività:** segnapunti; come estensione, punteggi di casa e ospiti o differenza reti
+**Sperimentazione attiva:** segnapunti; estensione: punteggi di due squadre o differenza reti
 
 <div class="flex justify-end my-2">
   <a href="https://makecode.microbit.org/S41178-88413-37695-37192" target="_blank" alt="Simulazione Micro:bit su MakeCode - Ricetta 2">
@@ -317,9 +322,9 @@ layout: itadinfo-two-cols-dx
 </v-click>
 
 <!--
-Il segnapunti introduce un passaggio concettuale decisivo. Se ogni pressione deve aggiornare un punteggio, il programma non può limitarsi a rispondere all’evento istantaneo: deve conservare informazione tra una pressione e la successiva. Questa memoria è rappresentata da una variabile.
+Il segnapunti introduce la memoria del programma. Per aggiornare il totale a ogni pressione, non basta reagire all’evento: occorre conservare il valore precedente e usarlo nel calcolo successivo. La variabile rappresenta questa informazione persistente.
 
-È qui che si può discutere in modo concreto la distinzione fra input, stato e output. Il pulsante B fornisce l’input; il punteggio è un dato interno che cambia a ogni pressione; il display mostra l’output. Il diagramma rende visibile la successione dei valori di stato. In un’estensione gli studenti realizzano un segnapunti che permette di annullare un punto con il pulsante A; altri progetti registrano i punti di due squadre o la loro differenza. La variabile non è soltanto un nome nel codice: rappresenta un’informazione che il programma conserva e usa.
+Possiamo così distinguere con precisione i tre elementi mostrati nella slide: il pulsante è l’input, il punteggio è una parte dello stato e il valore visualizzato è l’output. Il diagramma esplicita la successione dei valori. Come estensione, si può aggiungere la possibilità di annullare un punto oppure tenere il punteggio di due squadre: cambia la rappresentazione, ma resta la stessa idea di informazione conservata.
 
 -->
 
@@ -333,11 +338,11 @@ layout: itadinfo-two-cols
 - Usare condizioni per scegliere l’azione successiva
 - Esplorare una sequenza ciclica: “Pronti, partenza, via!”
 
-**Una domanda di previsione:** se lo stato è **2** e si preme B, che cosa succede?
+**Previsione:** se lo stato è **2** e si preme B, che cosa succede?
 
-**Attività:** sperimentare l’operatore resto e progettare altre sequenze cicliche
+**Sperimentazione attiva:** operatore resto e debugger
 
-**Attività:** usare il debugger per visualizzare la variabile di stato
+**Sperimentazione attiva:** se/allora/altrimenti
 
 <div class="flex justify-end my-2">
   <a href="https://makecode.microbit.org/S30553-34993-49578-00989" target="_blank" alt="Simulazione Micro:bit su MakeCode - Ricetta 3">
@@ -358,12 +363,9 @@ layout: itadinfo-two-cols
 </v-click>
 
 <!--
-Nel quarto incontro la sequenza degli stati viene codificata con numeri e le condizioni selezionano il comportamento successivo. A ogni pressione di B, il valore dello stato determina la fase successiva della sequenza “Pronti, partenza, via!”; dopo “Via!” si torna a “Pronti”. Il diagramma rende esplicito il ciclo.
-Nel programma vedete i costrutti di selezione in sequenza, costrutto che gli studenti avevano già sperimentato, ma lo stesso programma è stato realizzato anche annidando le condizioni usando il "se condizione, allora azioni, altrimenti...". Trovate il simbolo "più cerchiato" con il quale modificare il blocco di selezione con lo spazio per l'azione alternativa.
+Nel quarto incontro codifichiamo gli stati con numeri e usiamo condizioni per selezionare la transizione successiva. A ogni pressione di B, la sequenza passa da “Pronti” a “Partenza”, poi a “Via!” e ricomincia. Il diagramma sulla slide rende visibile il ciclo.
 
-Il ragionamento si è spostato su sequenze di lunghezza diversa, come quelle che si possono avere su un orologio digitale. In questa fase abbiamo introdotto il "resto della divisione euclidea" nel ragionamento come strumento per realizzare una progressione ciclica.
-
-Abbiamo presentato esempi in cui abbiamo chiesto di prevedere che cosa accadrà prima di eseguire il programma. La previsione costringe a leggere il valore dello stato e la condizione, invece di affidarsi soltanto al feedback del simulatore. Si comincia così a verificare il modello mentale dell’esecuzione.
+La domanda di previsione chiede di determinare l’esito prima di eseguire il programma: bisogna combinare il valore corrente dello stato, l’input e la condizione. Il debugger permette poi di confrontare la previsione con l’esecuzione. Per estendere la sequenza a più stati introduciamo l’operatore resto, collegando una tecnica di programmazione a una progressione ciclica.
 
 -->
 
@@ -373,14 +375,33 @@ layout: itadinfo-two-cols-dx
 
 ## Incontro 5 — Gestione del tempo e progetti di gruppo
 
-- Applicare gli schemi a segnapunti, dadi con accelerometro e giochi via Bluetooth
-- Nel Tamagotchi temporizzato, il pulsante A avvia il timer
-- Senza ulteriori interazioni, il timeout porta dallo stato felice a quello annoiato
-- Il blocco «per sempre» controlla il tempo trascorso e la condizione di timeout
+<!-- L'elenco principale mostra le 4 frasi nei primi 4 click -->
+<ul class="pl-6 flex flex-col gap-1">
+  <!-- Sostituito flex con grid grid-cols-[6fr_4fr] per bloccare le proporzioni delle colonne -->
+  <li v-click class="list-item list-disc grid grid-cols-[6fr_4fr] items-center w-full">
+    <span>L'animale si sveglia felice ma, dopo un certo tempo senza stimoli...</span> 
+    <!-- Click 5: Compaiono tutte le parti in grassetto -->
+    <b v-click="5" class="text-primary pl-4">«all'avvio», stato iniziale, timer attivo, istante</b>
+  </li>
+  
+  <li v-click class="list-item list-disc grid grid-cols-[6fr_4fr] items-center w-full">
+    <span>...si annoia.</span> 
+    <b v-click="5" class="text-primary pl-4">timer disattivato</b>
+  </li>
+  
+  <li v-click class="list-item list-disc grid grid-cols-[6fr_4fr] items-center w-full">
+    <span>Uno stimolo lo rende temporaneamente felice</span> 
+    <b v-click="5" class="text-primary pl-4">timer attivo, istante</b>
+  </li>
+  
+  <li v-click class="list-item list-disc grid grid-cols-[6fr_4fr] items-center w-full">
+    <span><strong>Il tempo deve essere gestito!</strong></span> 
+    <b v-click="5" class="text-primary pl-4">«Per sempre»</b>
+  </li>
+</ul>
 
-### Il tempo non “succede” nel programma: va rappresentato e controllato
-
-<div class="flex justify-end my-2">
+<!-- Click 6: Compare la GIF della simulazione -->
+<div class="flex justify-end my-2" v-click="6">
   <a href="https://makecode.microbit.org/S90051-13886-48915-94659" target="_blank" alt="Simulazione Micro:bit su MakeCode - Ricetta 4">
     <img src="./assets/img/recipe-4.gif" class="w-24" />
   </a>
@@ -388,23 +409,27 @@ layout: itadinfo-two-cols-dx
 
 ::right::
 
-![Esempio MakeCode con controllo temporizzato](./assets/img/microbit-recipe-4.png){width=75%}
+<!-- Click 6: Compare l'immagine del codice a destra insieme alla GIF -->
+<div class="flex justify-end w-full" v-click="6">
+  <img src="./assets/img/microbit-recipe-4.png" class="w-[75%]" alt="Esempio MakeCode con controllo temporizzato" />
+</div>
 
-<v-click>
+<!-- Usiamo un div standard con v-click="4" per far apparire l'intera sezione al quarto click -->
+<div v-click="4" class="mt-4">
+  <h2>Macchina a stati</h2>
 
-## Macchina a stati
+  <div class="flex justify-end w-full">
+    <img src="./assets/img/diagramma-stati-tempo.png" class="w-[80%]" alt="Diagramma di stato con transizioni e timeout" />
+  </div>
+</div>
 
-![Diagramma di stato del Tamagotchi con transizioni A e timeout](./assets/img/diagramma-stati-tempo.png){width=80%}
-
-</v-click>
 
 <!--
-Nell'ultima lezione si è cercato di far costruire una variante del Tamagotchi, quello della seconda lezione, introducendo la gestione del tempo.
-Questo richiede l'introduzione di un ciclo di controllo costante, «per sempre», che controlla se un timer è attivo e quanto tempo è trascorso; 
-«All'inizio» si imposta lo stato e un timer, prendendo il tempo d'avvio.
-Il blocco «per sempre» controlla se il timer è attivo e quanto tempo è trascorso; superata la soglia, il programma passa dallo stato iniziale, felice, a quello annoiato e disattiva il timer. La pressione di A riporta l’animale allo stato felice. Il tempo non è un evento magico: nel programma viene rappresentato e confrontato esplicitamente. Deve essere riattivato il timer e memorizzato l'istante nel quale è accaduto l'evento.
+Nell’ultimo incontro riprendiamo il Tamagotchi e aggiungiamo una transizione temporizzata. Quando si preme A, l’animale torna felice e il programma memorizza l’istante di avvio del timer. Nel ciclo «per sempre» controlla se è trascorso l’intervallo previsto; quando la soglia viene superata, passa allo stato annoiato e disattiva il timer.
 
-Si è quindi dato modo agli studenti di completare i loro mini-progetti che avevano iniziato nelle lezioni precedenti, chiedendo di applicare gli schemi già incontrati: per esempio, realizzano segnapunti, giochi di dadi con l’accelerometro, giochi tra dispositivi tramite Bluetooth tra cui i dadi e la morra cinese. 
+Il punto concettuale è che il tempo deve essere rappresentato e confrontato: non è un evento che il programma possa semplicemente “aspettare” senza controllo. La soluzione richiede di coordinare stato, istante iniziale, durata e condizione. È un passaggio più impegnativo, coerentemente con le difficoltà emerse nella valutazione.
+
+Nella parte di progetto gli studenti applicano gli schemi già incontrati, per esempio a un segnapunti, a un dado che usa l’accelerometro o a giochi tra dispositivi tramite Bluetooth, come i dadi o la morra cinese.
 
 -->
 
@@ -415,20 +440,22 @@ layout: itadinfo
 # Valutazione e risultati osservati
 
 ## Test finale
-Lettura dei blocchi · input, output e stato · «all’avvio» e «per sempre» · previsione delle transizioni · componenti della Micro:bit
+Lettura dei blocchi · input, output e stato · «all’avvio» e «per sempre» · previsione delle transizioni
 
 ## Questionario di gradimento
 - Il corso è stato apprezzato, ma non è stato percepito come pienamente rispondente alle esigenze degli studenti
 - Non si è realizzato l’atteso aumento delle iscrizioni all’indirizzo **Sistemi Informativi Aziendali (SIA)**
 
 ## Esito del test
-- Prestazioni mediamente buone, in particolare su variabili, struttura dei programmi e diagrammi di stato
-- Il tempo non è sufficiente per apprendere a distinguere gli stati e a realizzare il *loop* «per sempre»
+- Risultati mediamente buoni su variabili, struttura dei programmi e diagrammi di stato
+- Restano difficoltà nel classificare input/output e nel ragionare sul ciclo temporizzato
 
 <!--
-La valutazione conclusiva comprendeva un test a scelta multipla, svolto in una undicesima ora, e un questionario di gradimento anonimo svolto a casa. Il test riguardava blocchi di codice, input e output, automi a stati finiti e logica di programmazione. Le prestazioni sono state mediamente buone, soprattutto nell’uso delle variabili di stato, nella struttura dei programmi e nella lettura dei diagrammi. Sono emerse però difficoltà nel classificare formalmente le periferiche della Micro:bit come dispositivi di input o output e qualche fraintendimento con il controllo del flusso. Non sono disponibili percentuali o distribuzioni dei punteggi.
+La valutazione ha incluso un test a scelta multipla, svolto in un’undicesima ora, e un questionario anonimo di gradimento, compilato a casa. Il test chiedeva di leggere blocchi, distinguere input, output e stato e prevedere transizioni, oltre a riconoscere alcuni elementi della Micro:bit.
 
-Dal questionario emerge che il corso è stato apprezzato, ma non percepito come pienamente rispondente alle esigenze degli studenti.
+Nel complesso, le prestazioni sono state buone soprattutto su variabili, struttura dei programmi e lettura dei diagrammi. Sono emerse difficoltà nel classificare le periferiche come input o output e nel comprendere il controllo del flusso, in particolare nel ciclo temporizzato. Non riporto percentuali: non sono disponibili distribuzioni dei punteggi che consentano una quantificazione più precisa.
+
+Il questionario restituisce un dato diverso: il corso è stato apprezzato, ma non è stato percepito da tutti come pienamente rispondente alle proprie esigenze. Questo risultato va tenuto distinto dagli esiti del test.
 
 -->
 
@@ -448,11 +475,11 @@ layout: itadinfo
 **Orientamento:** non si è ottenuto l’aumento atteso delle iscrizioni al SIA
 
 <!--
-Una criticità emersa è la distanza tra competenza operativa e concettuale. Le prestazioni al test sono state mediamente buone, ma resta da consolidare la classificazione delle periferiche come input o output. La gestione del Tamagotchi temporizzato richiede inoltre di coordinare variabili, tempo e controllo continuo: è un passaggio che merita ulteriore consolidamento.
+La criticità didattica è la distanza possibile tra riuscire a costruire un comportamento e saperne spiegare il modello. I risultati sul test sono incoraggianti, ma la classificazione di input e output e il coordinamento di stato, tempo e ciclo richiedono altro lavoro.
 
- Ad essere sinceri, il target era stato selezionato soprattutto con l’obiettivo di aumentare le iscrizioni al percorso Sistemi Informativi Aziendali. Purtroppo questo non si è verificato perché gli studenti hanno preferito restare nel gruppo classe che ha scelto, in maggioranza, di proseguire nel percorso non articolato. Alcuni studenti, quelli interessati principalmente alle materie giuridico-economiche, non hanno il corso percepito come pienamente rispondente alle loro esigenze. Altri studenti ci hanno detto che queste attività sono state le più interessanti del percorso scolastico!
- 
- Coinvolgimento, comprensione concettuale e orientamento interno sono obiettivi collegati, ma non coincidono; l’orientamento va progettato esplicitamente e non può essere dato per acquisito come effetto automatico del laboratorio.
+C’è poi un esito di orientamento che è utile riferire con trasparenza. Il gruppo era stato coinvolto anche con l’aspettativa di favorire le iscrizioni al percorso Sistemi Informativi Aziendali; l’aumento atteso non si è verificato. Le risposte degli studenti sono state però articolate: alcuni, interessati soprattutto alle materie giuridico-economiche, non hanno trovato nel corso una piena corrispondenza con le proprie aspettative; altri lo hanno indicato come una delle attività più interessanti dell’anno.
+
+Gradimento, apprendimento concettuale e orientamento sono quindi dimensioni collegate, ma non intercambiabili. Se l’orientamento è un obiettivo, va progettato e discusso esplicitamente: non possiamo assumere che derivi automaticamente dal coinvolgimento nel laboratorio.
 
 -->
 
@@ -464,26 +491,26 @@ layout: itadinfo
 ## Conclusioni — Fare, descrivere, modellizzare
 
 - La Micro:bit rende osservabile il legame tra programma e sistema fisico
-- Eventi e variabili aprono la strada alla modellizzazione degli stati
-- Il laboratorio acquista valore formativo quando il ragionamento viene esplicitato
-- Non solo programmare un comportamento: imparare a descriverlo e a discuterlo per comprenderlo meglio
+- Eventi, variabili e transizioni rendono descrivibile il comportamento
+- Il valore formativo emerge quando il ragionamento è esplicitato
+- Non solo far funzionare un programma: descriverlo, prevederlo e discuterlo
 
 ## Sviluppi per una nuova edizione
 
-- Più tempo per consolidare i concetti: dieci ore bastano per introdurli, non per stabilizzarli
+- Più tempo per consolidare concetti e lessico
 - Verbalizzare input, stato, output e transizioni durante le attività
 - Chiedere di **prevedere prima di eseguire**
 - Esercitare il passaggio diagramma → programma
 
 
 <!--
-In conclusione, l’esperienza mostra che il physical computing può offrire un contesto efficace per insegnare informatica nel primo biennio. Il suo valore non sta soltanto nella possibilità di costruire oggetti interattivi, ma nel rendere osservabile il legame tra input, stato, controllo e output. La Micro:bit offre un supporto concreto per parlare di questi concetti e per mettere alla prova le descrizioni costruite dagli studenti.
+Il messaggio conclusivo è che il physical computing può essere un contesto per insegnare concetti informatici, non soltanto un’occasione per costruire oggetti interattivi. La Micro:bit rende osservabile il legame tra programma e sistema fisico; gli eventi, le variabili e le transizioni offrono un lessico per descrivere quel legame.
 
-La condizione è esplicitare il contenuto disciplinare: non limitarsi a far funzionare un programma, ma chiedere di descrivere il comportamento, rappresentare lo stato, prevedere le transizioni e discutere la correttezza. È questa la progressione evocata dal titolo: fare, descrivere, modellizzare.
+Perché il laboratorio abbia valore formativo, però, il ragionamento va reso esplicito. Non basta verificare che il programma funzioni: chiediamo agli studenti di descrivere il comportamento, individuare lo stato, prevedere la transizione e confrontare la previsione con l’esecuzione. È questa la progressione del titolo: fare, descrivere, modellizzare.
 
-Le proposte di sviluppo derivano direttamente dalle criticità osservate. Dieci ore sono sufficienti per un’introduzione significativa, ma non per consolidare tutti i concetti che l’attività mette in gioco. Servirebbe tempo aggiuntivo per distinguere con sicurezza evento esterno e stato interno, usare il lessico di sensore come input e display come output e trasformare diagrammi di stato in programmi.
+Per una nuova edizione prevederei più tempo per consolidare il lessico e il controllo temporizzato, brevi momenti di verbalizzazione durante le attività e un esercizio ricorrente di previsione prima dell’esecuzione. Aggiungerei inoltre occasioni sistematiche per passare dal diagramma al programma e viceversa. Se il percorso deve sostenere anche l’orientamento, renderei espliciti i collegamenti con le discipline e con gli indirizzi STEM, invece di affidarmi al solo entusiasmo dell’attività.
 
-Sul piano metodologico si possono inserire brevi momenti di verbalizzazione: prima di modificare il codice, gli studenti dichiarano qual è lo stato, quale evento si aspettano e quale uscita dovrebbero osservare. Un esercizio sistematico di previsione prima dell’esecuzione aiuterebbe a far emergere eventuali misconcezioni. Infine, se si vuole che il percorso abbia anche una funzione orientativa, il collegamento con le discipline e con i percorsi STEM va reso esplicito attraverso esempi e momenti di riflessione, non lasciato al solo entusiasmo dell’attività.
+In una frase: il punto non è soltanto far funzionare un programma, ma rendere visibile il modello concettuale che lo rende comprensibile.
 
 -->
 
