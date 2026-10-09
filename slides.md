@@ -228,7 +228,7 @@ layout: itadinfo-two-cols
 ## Incontro 1 — Familiarizzare con Micro:bit
 
 - Conoscere il display LED e i pulsanti
-- Esplorare i tutorial *Flashing Heart*, *Name Tag* e *Smiley Buttons*
+- Esplorare i tutorial: *Pet Hamster*, *Flashing Heart*, *Name Tag* e *Smiley Buttons*
 - Osservare output visivi e testuali; sperimentare gli input dei pulsanti
 - Confrontare simulatore e dispositivo
 
@@ -242,7 +242,7 @@ layout: itadinfo-two-cols
 ![Esempio visivo di icone visualizzate sulla Micro:bit](./assets/img/faccine.png){width=60%}
 
 <!--
-Il primo incontro serve a prendere confidenza con la scheda e con l’ambiente di lavoro. Con tutorial come *Flashing Heart*, *Name Tag* e *Smiley Buttons*, gli studenti osservano messaggi e icone e provano i pulsanti come ingressi. Non chiediamo ancora di formalizzare il comportamento: il primo obiettivo è collegare una modifica del programma a un effetto osservabile.
+Il primo incontro serve a prendere confidenza con la scheda e con l’ambiente di lavoro. Con tutorial come "Flashing Heart", "Name Tag" e "Smiley Buttons"*", gli studenti osservano messaggi e icone e provano i pulsanti come ingressi. Non chiediamo ancora di formalizzare il comportamento: il primo obiettivo è collegare una modifica del programma a un effetto osservabile. Il tutorial "Pet Hamster"
 
 Il confronto tra simulatore e dispositivo aiuta a discutere che cosa resta uguale e che cosa cambia passando dall’esecuzione simulata a quella fisica. Questa esperienza fornisce il lessico concreto di input e output che useremo negli incontri successivi.
 
